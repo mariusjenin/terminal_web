@@ -1,0 +1,13 @@
+vendor/
+# Run 'composer install' to have it
+
+.idea/
+
+
+config/config.php
+js/config/config.js
+
+*.phar
+phpdoc
+.phpdoc/
+docs/

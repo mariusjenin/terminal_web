@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Site Title -->
+    <title>Connexion</title>
+    <!-- Meta Character Set -->
+    <meta charset="UTF-8">
+    <!-- Icon -->
+    <link rel="shortcut icon" href="../img/identity/logo_terminal_app_round_bg.png">
+    <!-- CSS For Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Custom CSS -->
+    <link href="../css/custom/color.css" rel="stylesheet"/>
+    <link href="../css/custom/global.css" rel="stylesheet"/>
+
+    <link href="../css/custom/login.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="brand_login">
+    <img src="../img/identity/logo_terminal_no_bg.png">
+</div>
+<div class="background_gradient_animated">
+    <div class="container-fluid d-flex justify-content-center align-items-center flex-column">
+        <div class="d-flex vh-100 justify-content-between align-items-center">
+            <div class="login_block">
+                <div class="h1 px-3 py-2 login_title">
+                    Connexion
+                </div>
+                <form action="" data-method="post" class="login_form"
+                      onsubmit="return submit_form(event);">
+                    <div class="row">
+                        <div class="error_form d-none w-100 text-danger font-weight-bold justify-content-center align-items-center pl-3 pr-3 mb-2">
+                            Certaines valeurs ne conviennent pas
+                        </div>
+                        <div class="col-12">
+                            <div class="item_field_login">
+                                <label for="email" class="d-block font-weight-bold">Email</label>
+                                <input id="email" class="form-control d-block" type="text" placeholder="Votre email"
+                                       required>
+                            </div>
+                            <div class="item_field_login">
+                                <label for="password" class="d-block font-weight-bold">Mot de passe</label>
+                                <input id="password" class="form-control d-block" type="password"
+                                       placeholder="Votre mot de passe"
+                                       required>
+                            </div>
+                        </div>
+
+                        <div class="block_submit w-100 d-flex align-items-center flex-column text-center">
+                            <button class="submit_login btn_hoverable" type="submit">
+                                <img class="mh-100 mw-100" src="../img/icons/check.png">
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<!-- JQuery-->
+<script src="../js/jquery-3.5.1.min.js"></script>
+<!-- JavaScript Popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<!-- JavaScript Bootstrap -->
+<script src="../js/bootstrap.min.js"></script>
+<!-- Custom JavaScript -->
+<script src="../js/custom/submit_form.js"></script>
+</html>

@@ -1,0 +1,35 @@
+{
+    "name": "terminal/terminal",
+    "description": "Server of the project TERMINAL",
+    "require": {
+        "php": "^7.4",
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.2",
+        "selective/basepath": "^1.0",
+        "php-di/slim-bridge": "^3.0",
+        "illuminate/database": "^8.33",
+        "illuminate/events": "^8.33",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-openssl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Terminal\\Model\\": "src/model/",
+            "Terminal\\View\\": "src/view/",
+            "Terminal\\Controller\\": "src/controller/",
+            "Terminal\\Controller\\MobileAppController\\": "src/controller/mobile/",
+            "Terminal\\Controller\\WebAppController\\": "src/controller/web/",
+            "Terminal\\Manager\\": "src/manager/",
+            "Terminal\\Middleware\\": "src/middleware/",
+            "Terminal\\Utils\\": "src/utils/",
+            "Terminal\\": "src/"
+        },
+        "files": [
+          "config/config.php"
+        ]
+    },
+    "config": {
+        "platform-check": false
+    }
+}

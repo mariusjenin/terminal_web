@@ -1,0 +1,225 @@
+/* CSS CREATE_ITINERARY */
+
+.left_column_create_itinerary {
+    height: 750px;
+}
+
+.itinerary_edit_name {
+    height: 20%;
+}
+
+.submit_box {
+    height: 20%;
+}
+
+.itinerary_edit_box {
+    height: 60%;
+}
+
+.itinerary_edit_box_list {
+    max-height: 100%;
+    overflow: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.no_stops {
+    color: var(--grey);
+}
+
+#map_create_itinerary {
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    min-height: 500px;
+    z-index: 0;
+}
+
+.stop_box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 3px 3px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.stop_box:hover {
+    box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.5), 2px 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+.stop_box .form-control {
+    width: auto;
+    min-width: 100%;
+}
+
+.counter_stop {
+    background-color: white;
+    border: 2px solid;
+    min-width: 30px;
+    padding: 0px 5px;
+}
+
+.btn_left_stop img {
+    transform: rotate(-90deg);
+}
+
+.btn_right_stop img {
+    transform: rotate(90deg);
+}
+
+.btn_delete_stop,
+.btn_left_stop,
+.btn_right_stop,
+.counter_stop {
+    border-radius: 15px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    height: 30px;
+}
+
+.btn_delete_stop,
+.btn_left_stop,
+.btn_right_stop {
+    width: 30px;
+    padding: 5px;
+}
+
+.btn_hoverable.deactivated:hover {
+    transform: none !important;
+}
+
+.btn_hoverable.deactivated:active {
+    transform: none !important;
+}
+
+
+.btn_left_stop img,
+.btn_right_stop img,
+.btn_delete_stop img {
+    width: 100%;
+    height: 100%;
+}
+
+.notch_stops_itinerary {
+    position: absolute;
+    top: 0;
+    background-color: white;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+}
+
+.btn_display_itinerary,
+.btn_create_itinerary {
+    border-radius: 10px;
+    color: white !important;
+}
+
+.btn_create_itinerary {
+    background-color: var(--term-main-orange);
+    font-size: 1.5rem;
+}
+
+.btn_display_itinerary {
+    background-color: var(--term-main-blue);
+    font-size: 1.3rem;
+}
+
+.btn_display_itinerary.deactivated {
+    background-color: var(--grey);
+    cursor: auto;
+}
+
+
+/******************** <SLIDER> ***********************/
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--term-main-orange);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--term-main-orange);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/******************** <SLIDER/> ***********************/
+
+.switch_group_create_itinerary {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 50;
+}
+
+.switch_group_create_itinerary label {
+    margin: 0px !important;
+}
+
+/* lg */
+@media (min-width: 992px) {
+    #map_create_itinerary {
+        min-height: auto;
+    }
+
+    .left_column_create_itinerary {
+        height: 100%;
+    }
+
+    .switch_group_create_itinerary {
+        right: 35px;
+    }
+}

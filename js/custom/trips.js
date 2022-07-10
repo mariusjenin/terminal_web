@@ -1,0 +1,1 @@
+modal_post_button($(".btn_delete"), LANG["delete_trip_title"], LANG["delete_trip_desc"]);

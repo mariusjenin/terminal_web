@@ -1,0 +1,97 @@
+/* CSS Create trip */
+
+.box_content_create_trip {
+    max-height: 100%;
+    overflow: auto;
+    padding-bottom: 120px;
+}
+
+.btn_submit_create_trip {
+    border: 0px;
+    background-color: var(--term-main-orange);
+    color: white;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.btn_submit_create_trip:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.btn_submit_create_trip:active {
+    transform: translateX(-50%) scale(0.9);
+}
+
+.item_form_create_itinerary {
+    font-size: 1.1rem;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.item_form_create_itinerary label {
+    flex: 2 1 0;
+    margin: 0;
+}
+
+.item_form_create_itinerary .form-control {
+    flex: 1 1 0;
+    line-height: 100%;
+    font-size: inherit;
+}
+
+.stop_box {
+    font-size: 1.1rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    flex: 0 0 200px;
+    background-color: var(--term-main-blue-light);
+    color: white;
+    font-weight: 600;
+}
+
+.box_stops_create_itinerary {
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.notch_hour_stops_box {
+    width: 100%;
+}
+
+.notch_hour_stops {
+    font-size: 1.1rem;
+    box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.count_number {
+    min-width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    background-color: white;
+    color: var(--term-main-blue-light);
+    font-size: 1.2rem;
+    top: -7px;
+    left: -7px;
+    box-shadow: 2px 2px 6px var(--term-main-blue-light);
+}
+
+.btn_refresh_hours_stop {
+    min-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn_refresh_hours_stop img {
+    padding: 5px;
+    min-width: 100%;
+    height: 100%;
+}

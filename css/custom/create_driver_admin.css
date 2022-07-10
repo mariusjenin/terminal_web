@@ -1,0 +1,65 @@
+/* CSS Create trip */
+
+.box_content_create_driver_admin {
+    max-height: 100%;
+    overflow: auto;
+    padding-bottom: 120px;
+}
+
+.btn_submit_create_driver_admin {
+    border: 0px;
+    background-color: var(--term-main-orange);
+    color: white;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.btn_submit_create_driver_admin:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.btn_submit_create_driver_admin:active {
+    transform: translateX(-50%) scale(0.9);
+}
+
+.btn_submit_create_driver_admin {
+    font-size: 1.1rem;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.item_form_create_driver_admin {
+    font-size: 1.1rem;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.item_form_create_driver_admin label {
+    flex: 1 1 0;
+    margin: 0;
+}
+
+.item_form_create_driver_admin .form-control {
+    flex: 1 1 0;
+    line-height: 100%;
+    font-size: inherit;
+}
+
+.item_form_create_driver_admin .form-control[type="radio"] {
+    /*height: 20px;*/
+}
+
+
+.label_title {
+
+}
+
+.label_descr {
+    font-size: 0.9rem;
+}

@@ -1,0 +1,15 @@
+/* COLORS */
+
+html {
+    --term-main-blue: #3C3C75;
+    --term-main-blue-dark: #262548;
+    --term-main-blue-light: #6561bf;
+    --term-main-orange: #EC6E4C;
+    --term-main-orange-light: #ff846c;
+
+    --default-text-color: #212529;
+
+    --lightgrey: #d6d6d6;
+    --grey: #6e6e6e;
+    --darkgrey: #353535;
+}

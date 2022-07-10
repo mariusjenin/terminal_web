@@ -1,0 +1,100 @@
+/* CSS of trips of an itinerary */
+
+.trips_box {
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
+    --line-height: 50px;
+    --margin-btn: 10px;
+    --nb_btn: 2;
+}
+
+.line_trip {
+    min-height: var(--line-height);
+}
+
+.line_content_trip,
+.btn_trip,
+.new_trip {
+    min-height: var(--line-height);
+    transition: 0.2s;
+    border-radius: 7px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn_trip.deactivated {
+    cursor: auto;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+.line_content_trip {
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: calc(100% - var(--nb_btn) * var(--line-height) - var(--nb_btn) * var(--margin-btn));
+}
+
+.line_content_trip:not(.deactivated),
+.btn_trip:not(.deactivated),
+.new_trip:not(.deactivated) {
+    cursor: pointer;
+}
+
+.line_content_trip:not(.deactivated):hover,
+.btn_trip:not(.deactivated):hover,
+.new_trip:not(.deactivated):hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);
+}
+
+.line_content_trip:not(.deactivated):active,
+.btn_trip:not(.deactivated):active,
+.new_trip:not(.deactivated):active {
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn_trip {
+    width: var(--line-height);
+    margin-left: var(--margin-btn);
+}
+
+.btn_trip img {
+    padding: 20%;
+    width: 100%;
+    height: 100%;
+}
+
+.line_content_trip > div:not(.delimiter_trip_content) {
+    text-align: center;
+    flex: 1;
+}
+
+.delimiter_trip_content {
+    width: 0px;
+    height: calc(var(--line-height) - 20px);
+    border: 1px solid black;
+}
+
+.new_trip {
+    background-color: var(--term-main-orange);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.new_trip:hover {
+    background-color: var(--term-main-orange-light);
+}
+
+.new_trip:active {
+    background-color: var(--term-main-orange);
+}
+
+.add_trip {
+    border-radius: 50%;
+    background-color: white;
+    width: calc(var(--line-height) - 20px);
+    height: calc(var(--line-height) - 20px);
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%, 43% 0%, 43% 10%, 57% 10%, 57% 43%, 90% 43%, 90% 57%, 57% 57%, 57% 90%, 43% 90%, 43% 57%, 10% 57%, 10% 43%, 43% 43%, 43% 0%);
+}
+
+.no_trips_in_itinerary {
+    color: var(--grey);
+}

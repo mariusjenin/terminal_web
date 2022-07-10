@@ -1,0 +1,103 @@
+/* ITINERARIES CSS */
+
+.table_itineraries {
+
+}
+
+.table_itineraries td, .table_itineraries th {
+    text-align: center;
+    padding: 10px;
+}
+
+.table_itineraries th,
+.table_itineraries td:first-child {
+    font-weight: 600;
+}
+
+.table_itineraries_head > th {
+    /* bordure en dessous du header */
+    border-bottom: 2px var(--grey) solid;
+}
+
+.table_itineraries_row:not(:last-child) {
+    /* bordure en dessous des lignes */
+    border-bottom: 1px var(--lightgrey) solid;
+}
+
+/* bordure entre les elements des lignes au sein d'une section */
+.table_itineraries_row > td:not(:last-child):not(last_of_section) {
+
+    border-right: 1px var(--lightgrey) solid;
+}
+
+/* bordure entre les sections des lignes */
+.table_itineraries_row > td:not(:last-child).last_of_section,
+    /* bordure entre les elements du header */
+.table_itineraries_head > th:not(:last-child) {
+    border-right: 1px var(--grey) solid;
+}
+
+.no_trips_in_itinerary {
+    color: var(--grey);
+}
+
+.itinerary_box {
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
+    --line-height: 50px;
+    --margin-btn: 10px;
+    --nb_btn: 3;
+}
+
+.line_itinerary {
+    height: var(--line-height);
+}
+
+.title_itinerary,
+.btn_itinerary {
+    height: var(--line-height);
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 7px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn_itinerary.deactivated {
+    cursor: auto;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+.title_itinerary {
+    font-size: 1.3rem;
+    font-weight: 500;
+    width: calc(100% - var(--nb_btn) * var(--line-height) - var(--nb_btn) * var(--margin-btn));
+}
+
+.btn_itinerary {
+    width: var(--line-height);
+    margin-left: var(--margin-btn);
+}
+
+.title_itinerary:hover,
+.btn_itinerary:not(.deactivated):hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);
+}
+
+.title_itinerary:active,
+.btn_itinerary:not(.deactivated):active {
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn_itinerary img {
+    padding: 15%;
+    width: 100%;
+    height: 100%;
+}
+
+.btn_switch_planning_itinerary > img {
+    transition: 0.5s;
+}
+
+.btn_switch_planning_itinerary.active > img {
+    transform: rotate(180deg);
+}

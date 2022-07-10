@@ -1,0 +1,90 @@
+/*  CSS of Users */
+
+.box_email_user_like {
+    width: 100%;
+}
+
+.box_user_list {
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
+    --line-height: 55px;
+    --margin-btn: 15px;
+    --nb_btn: 2;
+}
+
+.line_user {
+    min-height: var(--line-height);
+}
+
+.line_user_content,
+.btn_user {
+    transition: 0.2s;
+    border-radius: 7px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.line_user_content {
+
+}
+
+
+.line_user_content {
+    height: calc(2 * var(--line-height) + 2 * var(--margin-btn));
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: calc(100% - var(--nb_btn) * var(--line-height) - var(--nb_btn) * var(--margin-btn));
+}
+
+.btn_user:not(.deactivated) {
+    cursor: pointer;
+}
+
+.btn_user:not(.deactivated):hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);
+}
+
+.btn_user:not(.deactivated):active {
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+.line_user_content > div {
+    text-align: center;
+    flex: 1;
+}
+
+
+.btn_user {
+    height: var(--line-height);
+    width: var(--line-height);
+    margin-left: var(--margin-btn);
+}
+
+.btn_user img {
+    padding: 20%;
+    width: 100%;
+    height: 100%;
+}
+
+.no_email_user {
+    color: var(--grey);
+}
+
+/* md */
+@media (min-width: 768px) {
+    .box_email_user_like {
+        width: 75%;
+    }
+}
+
+/* lg */
+@media (min-width: 992px) {
+    /*.btn_user,*/
+    /*.btn_user:last-child{*/
+    /*    margin-top: 0;*/
+    /*    margin-left: var(--margin-btn);*/
+    /*}*/
+    .line_user_content {
+        height: var(--line-height);
+    }
+}

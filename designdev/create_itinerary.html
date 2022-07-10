@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Site Title -->
+    <title>Créer un itinéraire</title>
+    <!-- Meta Character Set -->
+    <meta charset="UTF-8">
+    <!-- Icon -->
+    <link rel="shortcut icon" href="../img/identity/logo_terminal_app_round_bg.png">
+    <!-- CSS For Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/bootstrap-grid.min.css" rel="stylesheet"/>
+    <!-- JQUERY-UI -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- Custom CSS -->
+    <link href="../css/custom/color.css" rel="stylesheet"/>
+    <link href="../css/custom/global.css" rel="stylesheet"/>
+    <link href="../css/custom/create_itinerary.css" rel="stylesheet"/>
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+</head>
+<body>
+
+<div class="content scroll_page_container no_scroll_page_container-lg">
+    <div class="scroll_page_navbar no_scroll_page_navbar-lg">
+        <nav class="navbar navbar-expand-sm navbar-dark d-flex justify-content-between align-items-center">
+
+            <div class="mr-5 p-2 h-100 ">
+                <a class="d-flex align-items-center h-100" href="#">
+                    <div class="mw-100 h-100 p-1 navbar_bg_icon">
+                        <img class="mw-100 mh-100 " src="../img/identity/logo_terminal_no_bg.png">
+                    </div>
+                    <div class="font-weight-bold navbar-brand ml-4 mr-4 ">
+                        Terminal
+                    </div>
+                </a>
+            </div>
+
+            <button class="navbar-toggler mr-4" type="button" data-toggle="collapse" data-target="#navbar1"
+                    aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="mx-4 my-2 collapse navbar-collapse justify-content-md-end" id="navbar1">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown align-self-lg-center ml-lg-3">
+                        <a class="dropdown-toggle nav-link" href="#" id="dropdown04" data-toggle="dropdown"
+                           data-display="static" aria-haspopup="true" aria-expanded="false">
+                        <span class="text-navbar">
+                            Menu
+                        </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="#">Accueil</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Itinéraires</a>
+                            <a class="dropdown-item" href="#">Créer un itinéraire</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Utilisateurs</a>
+                            <a class="dropdown-item" href="#">Créer un compte</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="notch_bar">
+            <div class="notch_title">
+                <div>Créer un itinéraire</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="scroll_page_content no_scroll_page_content-lg">
+        <div class="container-fluid h-100">
+            <form action="/L3/terminal/terminal_web/create-itinerary" data-method="post"
+                  onsubmit="return submit_create_itinerary(event);" class="row h-100">
+
+                <div class="col-12 col-lg-6 d-flex position-relative">
+
+                    <div class="switch_group_create_itinerary d-flex justify-content-center align-items-center">
+                        <div class="switch_see_itinerary p-2 d-flex justify-content-center align-items-center flex-column">
+                            <div class="pb-2">
+                                Chemin
+                            </div>
+                            <label class="switch">
+                                <input checked oninput="drawItinerary()" type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="switch_fit_bounds p-2 d-flex justify-content-center align-items-center flex-column">
+                            <div class="pb-2">
+                                Centrer
+                            </div>
+                            <label class="switch">
+                                <input checked oninput="centerAroundBounds()" type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div onmouseleave="closeAllPopup()" class="flex-grow-1 flex-shrink-1 my-3 mr-0 mr-lg-3"
+                         id="map_create_itinerary"></div>
+                </div>
+
+                <div class="col-12 col-lg-6 d-flex flex-column left_column_create_itinerary">
+                    <div class="itinerary_edit_name d-flex justify-content-center align-items-center flex-column">
+                        <label for="name_itinerary"><b>Nom de cet itinéraire</b> (Les
+                            utilisateurs verront ce nom dans l'application)</label>
+                        <input id="name_itinerary" class="form-control" type="text"
+                               placeholder="Nom de l'itinéraire"
+                               name="name_itinerary"
+                               required>
+                    </div>
+                    <div class="itinerary_edit_box position-relative pb-3">
+                        <div class="itinerary_edit_box_list h-100 d-flex flex-row flex-wrap justify-content-center align-items-center pt-5 pb-2 py-2">
+                            <div class="notch_stops_itinerary px-4 py-2">
+                                Cliquez sur la carte pour ajouter des arrêts
+                            </div>
+
+                            <!-- List of stops-->
+
+                        </div>
+                    </div>
+
+                    <div class="submit_box">
+                        <div class="error_form w-100 text-danger d-none font-weight-bold justify-content-center align-items-center pl-3 pr-3 mt-2">
+                            Un problème a eu lieu pendant la création de l'itinéraire
+                        </div>
+                        <div class="d-flex justify-content-around align-items-center flex-row">
+                            <div onclick="drawItineraryDetailed('/L3/terminal/terminal_web/itinerary-json')"
+                                 class="btn_hoverable btn_display_itinerary deactivated px-4 py-3 m-2 text-center">
+                                Voir l'aperçu de l'itinéraire en détail
+                            </div>
+
+                            <input class="btn_hoverable btn_create_itinerary px-5 py-4 m-2 btn font-weight-bold"
+                                   type="submit" value="Créer cet itinéraire">
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+<!-- JQuery-->
+<script src="../js/jquery-3.5.1.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<!-- JavaScript Popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<!-- JavaScript Bootstrap -->
+<script src="../js/bootstrap.min.js"></script>
+<!-- Leaflet -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+<!-- Custom JavaScript -->
+<script src="../js/custom/submit_form.js"></script>
+<script src="../js/custom/post_button.js"></script>
+<script src="../js/custom/create_itinerary.js"></script>
+</html>

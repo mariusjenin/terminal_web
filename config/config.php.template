@@ -1,0 +1,9 @@
+<?php
+//BDD
+define('DBHOST', 'localhost');
+define('DBNAME', 'terminal_bdd');
+define('DBUSER', 'PUT_THE_DB_USER');
+define('DBPWD', 'PUT_THE_DB_PWD_FOR_DB_USER');
+define('DBPORT', 3306);
+
+define('TOKEN_OPENROUTESERVICE', 'TOKEN_OF_THE_OPENROUTESERVICE_API');
